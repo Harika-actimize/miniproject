@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+<head>
+    <meta charset="utf-8" />
+    
+    <!-- Required CDN's -->
+    <link rel="stylesheet"
+          href=
+"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <script src=
+"https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+    </script>
+    <script src=
+"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js">
+    </script>
+    <script src=
+"https://cdnjs.cloudflare.com/ajax/libs/jquery-zoom/1.7.21/jquery.zoom.js">
+
+    </script>
+  
+    <style>
+        body {
+            margin: 0px;
+        }
+        h1 {
+            color: green;
+        }
+        .container {
+            display: block;
+            padding: 0px;
+        }
+          
+        .contain {
+            position: fixed;
+            right: 10%;
+            top: 15%;
+            width: 500px;
+            height: 520px;
+            z-index: 1;
+        }
+          .mater{
+            margin-top: 10px;
+            font-size:14px
+          }
+        .magnifyimg {
+            width: 350px;
+            height: 350px;
+            border-radius: 5px;
+            margin: 5%;
+        }
+        .checked{
+  color: orange;
+}
+    </style>
+</head>
+  
+<body onload="firstimg('./assets/images/shr1.jpg')">
+    <div style="background-color: #03fc90;color: green; padding: 5px; padding-bottom: 10px;">Get 10% offer on order $400.00.Your discount will be reflected at checkout</div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="parent" style="margin-bottom: 10px;">
+                    <img src=
+        "./assets/images/shr1.jpg " class="rounded magnifyimg ">
+                </div>
+          <div> 
+            <img src="./assets/images/shr1.jpg" id="vp" alt=""height="150px" width="150px" onclick="firstimg('./assets/images/shr1.jpg','#vp')">
+            <img src="./assets/images/shirt.jpg" id="vp1" alt=""onclick="firstimg('./assets/images/shirt.jpg','#vp1')">
+            <img src="./assets/images/shirt1.jpg" id="vp2" alt="" onclick="firstimg('./assets/images/shirt1.jpg' ,'#vp2')">
+          </div>
+                <span class="contain">
+                <!-- Into another container -->
+            </span>
+            </div>
+             <div class="col-sm-6">
+                <h2>Shirt</h2>
+                <img src="./assets/images/vpage.webp" alt="" height="70px" width="500px">
+                <p class="mater">We use encrypted SSL securityto ensure that you credit card informaton is 100% protected</p>
+                <h5><b>HOW TO ORDER?</b></h5> 
+                <p class="mater">1.Select product,Specifications and <b>COLOR</b>2.Select <b>SIZE</b>and quantity</p>
+                <p class="mater">3.Click <b>"Add to Cart"</b>4.Enter shipping and billing information</p>
+                <p class="mater"><b>Tip:</b>Buy 2 or more and save 80% on shipping</p>
+                <p class="mater"><b>U.S.A Printing-Worldwide shiping With 100% satisfaction guarantee</b></p>
+                <p class="mater">callSupport(1-855-999-7840) Monday-Friday9AM-5PM(PST)</p>
+                <p class="mater">Email: <a href="#">support@mctyler.com</a></P>
+                <p class="mater"><b>Browse other design:</b> <a href="#">mctyler.com</a></p>
+            </div>
+            
+        
+    </div>
+    </div>
+  
+    <script>
+        // $(document).ready(function() {
+  
+        //     $('.parent').css('width', $('.magnifyimg').width());
+  
+        //     $('.magnifyimg')
+        //         .parent()
+        //         .zoom({
+        //             magnify: 4,
+        //             target: $('.contain').get(0)
+        //         });
+        // });
+
+        function firstimg(url,id){
+            // console.log("sdfg",url)
+            $('.magnifyimg').removeAttr('src')
+            $('.magnifyimg').attr('src',url)
+            $("#vp").css("border","none");
+            $("#vp1").css("border","none");
+            $("#vp2").css("border","none");
+            $(id).css("border","1px solid green");
+            $('.parent').css('width', $('.magnifyimg').width());
+            console.log($('.contain').get(0))
+            $('.magnifyimg')
+                .parent()
+                .zoom({
+                magnify: 4,
+                target: $('.contain').get(0)
+            });       
+            
+        }
+    </script>
+</body>
+  
+</html>           
